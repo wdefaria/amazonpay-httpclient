@@ -85,9 +85,10 @@ public class SimpleHttpClientPost {
     public static void main(String[] args) throws Exception {
 
         String requestId = UUID.randomUUID().toString();
-        String privateKeyPath = "/Users/wdefaria/Documents/amazonPayKeys/privateKey.pem";
+        String privateKeyPath = "PRIVATE_KEY";
+        String publicKey = "PUBLIC_KEY";
 
-        String buyerId = "amzn1.account.AFHHMTSZZHMIZJYK4U6YGJ4VEEHQ";
+        String buyerId = "{BUYER_ID}";
         var primeBenefitURI = "https://prime-apis.amazon.com/v1/customer/link-benefit/PRIME_GRUB_HUB_BENEFIT";
 
         String idempotencyKey = UUID.randomUUID().toString();
@@ -104,7 +105,7 @@ public class SimpleHttpClientPost {
 
         PayConfiguration payConfiguration = new PayConfiguration()
                 .setPrivateKey(privateKeyChars)
-                .setPublicKeyId("SANDBOX-AEE2ZD325IKWE7JIRDGJ3EHP")
+                .setPublicKeyId(publicKey)
                 .setEnvironment(Environment.SANDBOX)
                 .setRegion(Region.NA);
 
